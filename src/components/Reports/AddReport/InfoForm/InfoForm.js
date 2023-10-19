@@ -30,7 +30,7 @@ export function InfoForm(props) {
           }}
         />
         <Input
-          placeholder="Descripcion"
+          placeholder="Descripcion del hecho"
           onChangeText={(text) => formik.setFieldValue("description", text)}
           errorMessage={formik.errors.description}
           multiline={true}
