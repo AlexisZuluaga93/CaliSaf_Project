@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../utils";
 import { Carousel, Loading } from "../../../components/shared";
+import { Header } from "../../../components/Report/";
 export function ReportScreen(props) {
   const { width } = Dimensions.get("window");
   const [report, setReport] = useState(null);
@@ -30,6 +31,8 @@ export function ReportScreen(props) {
   return (
     <ScrollView style={styles.content}>
       <Carousel arrayImages={report.images} height={250} width={width} />
+
+      <Header report={report} />
     </ScrollView>
   );
 }

@@ -13,7 +13,7 @@ import {
 import { onAuthStateChanged } from "firebase/auth";
 import { LoadingModal } from "../../../components/shared";
 import { ListReports } from "../../../components/Reports";
-
+import { Header } from "../../../components/Report/";
 export function ReportsScreen(props) {
   const [reports, setReports] = useState(null);
   const { navigation } = props;
