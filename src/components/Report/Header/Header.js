@@ -10,7 +10,7 @@ export function Header(props) {
   return (
     <View style={styles.content}>
       <View style={styles.containerInformation}>
-        <Text style={styles.text}>{report.typeRep}</Text>
+        <Text style={styles.textType}>{report.typeRep}</Text>
         <Text style={styles.text}>{report.description}</Text>
       </View>
       <MapView

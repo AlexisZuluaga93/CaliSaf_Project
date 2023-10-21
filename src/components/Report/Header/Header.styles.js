@@ -15,10 +15,15 @@ export const styles = StyleSheet.create({
     margin: 15,
     color: "#828282",
   },
+  textType: {
+    margin: 15,
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+  },
   mapStyle: {
     marginTop: 10,
     width: "100%",
-    height: 300,
+    height: 200,
     borderRadius: 25,
   },
 });

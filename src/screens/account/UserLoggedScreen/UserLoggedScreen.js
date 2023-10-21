@@ -18,13 +18,15 @@ export function UserLoggedScreen() {
       <InfoUser setLoading={setLoading} setLoadingText={setLoadingText} />
 
       <AccountOptions />
+      <View style={styles.ButtonContainer}>
+        <Button
+          title="Cerrar Sesion"
+          buttonStyle={styles.btnStyles}
+          titleStyle={styles.btnTextStyle}
+          onPress={logOut}
+        />
+      </View>
 
-      <Button
-        title="Cerrar Sesion"
-        buttonStyle={styles.btnStyles}
-        titleStyle={styles.btnTextStyle}
-        onPress={logOut}
-      />
       <LoadingModal show={loading} text={loadingText} />
     </View>
   );
