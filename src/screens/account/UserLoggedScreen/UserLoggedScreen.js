@@ -13,11 +13,15 @@ export function UserLoggedScreen() {
   const logOut = async () => {
     await signOut(auth);
   };
+  const [reload, setReload] = useState(false);
+  const onReload = () => {
+    setReload((prevState) => !prevState);
+  };
   return (
     <View>
       <InfoUser setLoading={setLoading} setLoadingText={setLoadingText} />
 
-      <AccountOptions />
+      <AccountOptions onReload={onReload} />
       <View style={styles.ButtonContainer}>
         <Button
           title="Cerrar Sesion"

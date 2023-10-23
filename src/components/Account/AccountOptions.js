@@ -5,13 +5,16 @@ import { map } from "lodash";
 import { useState } from "react";
 import { Modal } from "../../components/shared";
 import { ChangeDisplayNameForm } from "./ChangeDisplayNameForm";
-export function AccountOptions() {
+export function AccountOptions(props) {
+  const { onReload } = props;
   const [showModal, setShowModal] = useState(false);
   const [renderComponent, setRenderComponent] = useState(null);
   const onCloseOpenModal = () => setShowModal((prevState) => !prevState);
   const selectedComponents = (key) => {
     if (key === "displayName") {
-      setRenderComponent(<ChangeDisplayNameForm onClose={onCloseOpenModal} />);
+      setRenderComponent(
+        <ChangeDisplayNameForm onClose={onCloseOpenModal} onReload={onReload} />
+      );
     }
     if (key === "email") {
       setRenderComponent(<Text>Cambiar Email</Text>);
