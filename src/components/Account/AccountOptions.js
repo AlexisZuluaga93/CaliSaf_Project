@@ -5,6 +5,7 @@ import { map } from "lodash";
 import { useState } from "react";
 import { Modal } from "../../components/shared";
 import { ChangeDisplayNameForm } from "./ChangeDisplayNameForm";
+import { ChangeEmailForm } from "./ChangeEmailForm";
 export function AccountOptions(props) {
   const { onReload } = props;
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +18,9 @@ export function AccountOptions(props) {
       );
     }
     if (key === "email") {
-      setRenderComponent(<Text>Cambiar Email</Text>);
+      setRenderComponent(
+        <ChangeEmailForm onClose={onCloseOpenModal} onReload={onReload} />
+      );
     }
     if (key === "password") {
       setRenderComponent(<Text>Cambiar Contraseña</Text>);
