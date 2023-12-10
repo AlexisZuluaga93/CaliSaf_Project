@@ -3,6 +3,7 @@ import { Text } from "react-native-elements";
 import React from "react";
 import { styles } from "./Header.styles";
 import MapView, { Marker } from "react-native-maps";
+import { Map } from "../../shared";
 
 export function Header(props) {
   const { report } = props;
@@ -13,13 +14,7 @@ export function Header(props) {
         <Text style={styles.textType}>{report.typeRep}</Text>
         <Text style={styles.text}>{report.description}</Text>
       </View>
-      <MapView
-        initialRegion={report.location}
-        showsUserLocation={true}
-        style={styles.mapStyle}
-      >
-        <Marker draggable coordinate={report.location}></Marker>
-      </MapView>
+      <Map location={report.location} address={report.address} />
     </View>
   );
 }

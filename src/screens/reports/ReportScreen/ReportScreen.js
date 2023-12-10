@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../utils";
 import { Carousel, Loading } from "../../../components/shared";
-import { Header } from "../../../components/Report/";
+import { Header } from "../../../components/Report";
 export function ReportScreen(props) {
   const { width } = Dimensions.get("window");
   const [report, setReport] = useState(null);

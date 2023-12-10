@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { screen } from "../utils";
 import { ReportsScreen } from "../screens/reports/ReportsScreen";
 import { AddReportScreen } from "../screens/reports/AddReportScreen";
-import { ReportScreen } from "../components/Reports/ReportScreen";
+import { ReportScreen } from "../screens/reports/ReportScreen";
 
 const Stack = createNativeStackNavigator();
 

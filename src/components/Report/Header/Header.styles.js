@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   content: {
-    margin: 15,
+    margin: 5,
   },
   containerInformation: {
     flex: 1,
@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 2,
     borderColor: "#828282",
+    borderRadius: 15,
+    margin: 10,
   },
   text: {
     margin: 15,
@@ -19,11 +21,5 @@ export const styles = StyleSheet.create({
     margin: 15,
     fontWeight: "bold",
     textDecorationLine: "underline",
-  },
-  mapStyle: {
-    marginTop: 10,
-    width: "100%",
-    height: 200,
-    borderRadius: 25,
   },
 });
