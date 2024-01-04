@@ -20,14 +20,12 @@ export function ReportScreen(props) {
     setReport(null);
     onSnapshot(doc(db, "reports", route.params.id), (doc) => {
       setReport(doc.data());
-      console.log(doc.data());
     });
   }, [route.params.id]);
 
   if (!report) {
-    return <Loading show text="Cargando restaurantes" />;
+    return <Loading show text="Cargando " />;
   }
-  console.log(route.params);
   return (
     <ScrollView style={styles.content}>
       <Carousel arrayImages={report.images} height={250} width={width} />

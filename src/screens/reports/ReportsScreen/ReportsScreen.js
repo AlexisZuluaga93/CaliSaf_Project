@@ -27,7 +27,6 @@ export function ReportsScreen(props) {
     const q = query(collection(db, "reports"), orderBy("createAt", "desc"));
     onSnapshot(q, (snapshot) => {
       const data = snapshot.docs.map((doc) => doc.data());
-      console.log("reports", JSON.stringify(data));
       setReports(data);
     });
   }, []);

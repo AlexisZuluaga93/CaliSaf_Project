@@ -4,6 +4,9 @@ export const styles = StyleSheet.create({
   content: {
     flexDirection: "row",
     margin: 10,
+    borderWidth: 1.5,
+    borderColor: "#00a680",
+    borderRadius: 2,
   },
 
   images: {
