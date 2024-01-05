@@ -15,11 +15,6 @@ const searchStack = {
   search: "SearScreen",
 };
 
-const myReportsStack = {
-  tab: "MyReportsTab",
-  myReports: "MyReportsScreen",
-};
-
 const accountStack = {
   tab: "AccountTab",
   account: "Account",
@@ -36,7 +31,6 @@ export const screen = {
   map: mapaStack,
   reports: reportesStack,
   search: searchStack,
-  myReports: myReportsStack,
   account: accountStack,
   donation: donationStack,
 };

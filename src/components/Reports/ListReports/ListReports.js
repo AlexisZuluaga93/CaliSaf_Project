@@ -13,7 +13,7 @@ export function ListReports(props) {
   const goToReport = (report) => {
     navigation.navigate(screen.reports.report, { id: report.id });
   };
-  console.log(reports[0]);
+
   return (
     <FlatList
       data={reports}
