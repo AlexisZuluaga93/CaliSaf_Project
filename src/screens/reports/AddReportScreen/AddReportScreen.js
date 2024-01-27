@@ -35,7 +35,7 @@ export function AddReportScreen() {
     },
   });
   return (
-    <ScrollView style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       <IconReport formik={formik} />
       <InfoForm formik={formik} />
       <UploadImageForm formik={formik} />

@@ -12,7 +12,7 @@ const reportesStack = {
 
 const searchStack = {
   tab: "searchTab",
-  search: "SearScreen",
+  search: "SearchScreen",
 };
 
 const accountStack = {

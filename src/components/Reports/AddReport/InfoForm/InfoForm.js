@@ -3,21 +3,40 @@ import React, { useState } from "react";
 import { styles } from "./InfoForm.styles";
 import { Icon, Input } from "react-native-elements";
 import { MapForm } from "../MapForm";
+import { TypeReport } from "../../../shared";
 export function InfoForm(props) {
   const { formik } = props;
   const onOpenCloseMap = () => {
     setShowMap((prevState) => !prevState);
   };
   const [showMap, setShowMap] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+
+  const placeholder = {
+    label: "Selecciona una opción",
+    value: null,
+    color: "#9EA0A4",
+  };
+
+  const options = [
+    { label: "Asesinato", value: "Asesinato" },
+    { label: "Accidente", value: "Accidente" },
+    { label: "Robo", value: "Robo" },
+    { label: "Fleteo", value: "Fleteo" },
+  ];
+  const onValueChange = (value) => {
+    setSelectedValue(value);
+    formik.setFieldValue("typeRep", value);
+  };
   return (
     <>
       <View style={styles.content}>
-        <Input
-          placeholder="Tipo de reporte"
-          onChangeText={(text) => formik.setFieldValue("typeRep", text)}
-          errorMessage={formik.errors.typeRep}
+        <TypeReport
+          selectedValue={selectedValue}
+          placeholder={placeholder}
+          options={options}
+          onValueChange={onValueChange}
         />
-
         <Input
           placeholder="Direccion"
           onChangeText={(text) => formik.setFieldValue("address", text)}

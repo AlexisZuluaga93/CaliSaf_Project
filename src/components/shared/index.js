@@ -4,3 +4,4 @@ export * from "./Carousel";
 export * from "./Loading";
 export * from "./Map";
 export * from "./CustomMarker";
+export * from "./TypeReport";
