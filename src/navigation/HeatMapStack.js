@@ -1,15 +1,15 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { screen } from "../utils";
-import { SearchScreen } from "../screens/SearchAreaStaticsScreen";
+import { HeatMapScreen } from "../screens/HeatMapScreen";
 
 const Stack = createNativeStackNavigator();
 
-export function SearchStack() {
+export function HeatMapStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={screen.search.search}
-        component={SearchScreen}
+        name={screen.heatMap.heatMap}
+        component={HeatMapScreen}
         options={{
           title: "Buscar Lugar",
         }}

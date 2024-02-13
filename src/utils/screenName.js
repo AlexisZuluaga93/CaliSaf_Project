@@ -10,9 +10,9 @@ const reportesStack = {
   report: "ReportScreen",
 };
 
-const searchStack = {
-  tab: "searchTab",
-  search: "SearchScreen",
+const heatMapStack = {
+  tab: "heatMapTab",
+  heatMap: "HeatMapScreen",
 };
 
 const accountStack = {
@@ -30,7 +30,7 @@ const donationStack = {
 export const screen = {
   map: mapaStack,
   reports: reportesStack,
-  search: searchStack,
+  heatMap: heatMapStack,
   account: accountStack,
   donation: donationStack,
 };

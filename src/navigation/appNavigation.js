@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { screen } from "../utils";
 import { ReportsStack } from "./ReportsStack";
 import { MapStack } from "./MapStack";
-import { SearchStack } from "./SearchStack";
+import { HeatMapStack } from "./HeatMapStack";
 import { AccountStack } from "./AccountStack";
 import { DonationStack } from "./DonationStack";
 
@@ -21,7 +21,7 @@ export function AppNavigation() {
         name={screen.map.tab}
         component={MapStack}
         options={{
-          title: "Map",
+          title: "Mapa",
           tabBarIcon: ({ color, size }) => (
             <Icon name="map-outline" color={color} size={size} />
           ),
@@ -38,12 +38,12 @@ export function AppNavigation() {
         }}
       />
       <Tab.Screen
-        name={screen.search.tab}
-        component={SearchStack}
+        name={screen.heatMap.tab}
+        component={HeatMapStack}
         options={{
-          title: "Buscar",
+          title: "Mapa de Calor",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="search-outline" color={color} size={size} />
+            <Icon name="thermometer-outline" color={color} size={size} />
           ),
         }}
       />
@@ -61,7 +61,7 @@ export function AppNavigation() {
         name={screen.donation.tab}
         component={DonationStack}
         options={{
-          title: "Done",
+          title: "Donación",
           tabBarIcon: ({ color, size }) => (
             <Icon name="card-outline" color={color} size={size} />
           ),

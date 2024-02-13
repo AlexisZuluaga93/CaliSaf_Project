@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styles } from "./InfoForm.styles";
-import { Icon, Input } from "react-native-elements";
+import { Input } from "react-native-elements";
 import { MapForm } from "../MapForm";
 import { TypeReport } from "../../../shared";
 export function InfoForm(props) {
@@ -11,6 +11,15 @@ export function InfoForm(props) {
   };
   const [showMap, setShowMap] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+
+  useEffect(() => {
+    if (formik.values.location) {
+      setLatitude(formik.values.location.latitude);
+      setLongitude(formik.values.location.longitude);
+    }
+  }, [formik.values.location]);
 
   const placeholder = {
     label: "Selecciona una opción",
@@ -38,8 +47,9 @@ export function InfoForm(props) {
           onValueChange={onValueChange}
         />
         <Input
-          placeholder="Direccion"
+          placeholder="Selecciona una ubicacion en el mapa "
           onChangeText={(text) => formik.setFieldValue("address", text)}
+          editable={false}
           errorMessage={formik.errors.address}
           rightIcon={{
             type: "material-community",
@@ -47,6 +57,8 @@ export function InfoForm(props) {
             color: getColorIconMap(formik),
             onPress: onOpenCloseMap,
           }}
+          value={`${latitude},${longitude}`}
+          style={styles.inputTxt}
         />
         <Input
           placeholder="Descripcion del hecho"
