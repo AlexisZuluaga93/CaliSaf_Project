@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { styles } from "./CustomMarker.styles";
 import { Image } from "react-native-elements";
@@ -14,17 +13,16 @@ export function CustomMarker({ type }) {
       imageMarker = require("../../../../assets/img/Asesinato.png");
       break;
 
-    case "Fleteo":
-      imageMarker = require("../../../../assets/img/Fleteo.png");
-      break;
-
     case "Robo":
       imageMarker = require("../../../../assets/img/Robo.png");
       break;
-
-    case "Manoseo":
-      imageMarker = require("../../../../assets/img/Manoseo.png");
-      break;
   }
-  return <Image source={imageMarker} type={type} style={styles.icon} />;
+  return (
+    <Image
+      source={imageMarker}
+      type={type}
+      style={styles.icon}
+      containerStyle={styles.containerIcon}
+    />
+  );
 }

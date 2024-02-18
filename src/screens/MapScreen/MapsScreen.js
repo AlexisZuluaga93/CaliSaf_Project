@@ -6,8 +6,7 @@ import { collection, doc, onSnapshot, query } from "firebase/firestore";
 import { screen, auth, db } from "../../utils";
 import { map } from "lodash";
 import { CustomMarker } from "../../components/shared";
-import { View, TouchableOpacity } from "react-native";
-import { TypeReport } from "../../components/shared";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 
 export function MapsScreen(props) {
   const { navigation, route } = props;
@@ -67,6 +66,8 @@ export function MapsScreen(props) {
       style={styles.content}
       initialRegion={caliLocation}
       mapType="standard"
+      provider="google"
+      minZoomLevel={12.5}
     >
       {filteredReports.length < 1
         ? map(locations, (location, index) => (

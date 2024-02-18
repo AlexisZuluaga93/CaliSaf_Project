@@ -1,34 +1,32 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  content: {
+  container: {
+    alignSelf: "center",
+    paddingHorizontal: 7,
+    paddingBottom: 20,
+  },
+  imageContent: {
+    flex: 1,
     backgroundColor: "white",
-    flexDirection: "row",
-    margin: 10,
-    borderWidth: 1.5,
-    borderColor: "#00a680",
-    borderRadius: 4,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 10,
-      height: 10,
-    },
-
-    shadowOpacity: 0.8,
-    shadowRadius: 8,
+    borderRadius: 18,
   },
 
   images: {
-    width: 80,
-    height: 80,
-    marginRight: 15,
+    flex: 1,
+    resizeMode: "contain",
   },
   typeReport: {
     fontWeight: "bold",
+    color: "white",
   },
-  info: {
-    color: "#828282",
-    paddingRight: 100,
-    marginTop: 3,
+
+  typeContent: {
+    height: 50,
+    alignItems: "center",
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
+    backgroundColor: "#00a680",
+    justifyContent: "center",
   },
 });

@@ -31,7 +31,6 @@ export function InfoForm(props) {
     { label: "Asesinato", value: "Asesinato" },
     { label: "Accidente", value: "Accidente" },
     { label: "Robo", value: "Robo" },
-    { label: "Fleteo", value: "Fleteo" },
   ];
   const onValueChange = (value) => {
     setSelectedValue(value);

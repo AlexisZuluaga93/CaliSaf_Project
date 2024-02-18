@@ -6,6 +6,7 @@ import { MapStack } from "./MapStack";
 import { HeatMapStack } from "./HeatMapStack";
 import { AccountStack } from "./AccountStack";
 import { DonationStack } from "./DonationStack";
+import { Image } from "react-native";
 
 const Tab = createBottomTabNavigator();
 export function AppNavigation() {
@@ -18,26 +19,32 @@ export function AppNavigation() {
       })}
     >
       <Tab.Screen
+        name={screen.reports.tab}
+        component={ReportsStack}
+        options={{
+          title: "Reportes",
+          tabBarIcon: ({ size }) => (
+            <Image
+              source={require("../../assets/img/megafono.png")}
+              style={{ height: size, width: size }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name={screen.map.tab}
         component={MapStack}
         options={{
           title: "Mapa",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="map-outline" color={color} size={size} />
+            <Image
+              source={require("../../assets/img/map.png")}
+              style={{ height: size + 5, width: size + 5 }}
+            />
           ),
         }}
       />
-      <Tab.Screen
-        name={screen.reports.tab}
-        component={ReportsStack}
-        options={{
-          title: "Reportes",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="warning-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
+      {/*<Tab.Screen
         name={screen.heatMap.tab}
         component={HeatMapStack}
         options={{
@@ -46,18 +53,21 @@ export function AppNavigation() {
             <Icon name="thermometer-outline" color={color} size={size} />
           ),
         }}
-      />
+      />  esto se implementara mas adelante*/}
       <Tab.Screen
         name={screen.account.tab}
         component={AccountStack}
         options={{
           title: "Cuenta",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="person-outline" color={color} size={size} />
+            <Image
+              source={require("../../assets/img/account.png")}
+              style={{ height: size, width: size }}
+            />
           ),
         }}
       />
-      <Tab.Screen
+      {/*  <Tab.Screen
         name={screen.donation.tab}
         component={DonationStack}
         options={{
@@ -66,7 +76,7 @@ export function AppNavigation() {
             <Icon name="card-outline" color={color} size={size} />
           ),
         }}
-      />
+      /> esto se implementara mas adelante*/}
     </Tab.Navigator>
   );
 }

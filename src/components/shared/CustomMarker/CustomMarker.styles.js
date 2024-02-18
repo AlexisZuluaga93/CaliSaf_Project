@@ -4,6 +4,12 @@ export const styles = StyleSheet.create({
   icon: {
     height: 35,
     width: 35,
-    borderRadius: 2,
+    alignSelf: "center",
+  },
+  containerIcon: {
+    height: 40,
+    width: 40,
+    backgroundColor: "white",
+    borderRadius: 100,
   },
 });

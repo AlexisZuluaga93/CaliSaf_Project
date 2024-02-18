@@ -22,7 +22,10 @@ export function Map(props) {
       style={styles.content}
       initialRegion={location}
       showsUserLocation={true}
+      maxZoomLevel={20}
+      minZoomLevel={5}
       onPress={openAppMaps}
+      scrollEnabled={false}
     >
       <Marker draggable coordinate={location} />
     </MapView>

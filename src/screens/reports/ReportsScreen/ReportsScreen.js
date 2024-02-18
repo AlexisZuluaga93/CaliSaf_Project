@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import { Button, Icon } from "react-native-elements";
+import { Icon } from "react-native-elements";
 import { screen, auth, db } from "../../../utils";
 import { styles } from "./ReportsScreen.styles";
-import {
-  collection,
-  doc,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { LoadingModal } from "../../../components/shared";
 import { ListReports } from "../../../components/Reports";
