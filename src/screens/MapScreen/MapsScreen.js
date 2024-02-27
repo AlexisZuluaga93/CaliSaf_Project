@@ -20,8 +20,6 @@ export function MapsScreen(props) {
   const [locations, setLocations] = useState([]);
   const [typeRep, setTypeRep] = useState([]);
   const [ids, setIds] = useState([]);
-  const [filter, setFilter] = useState(null);
-  const [filteredReports, setFilteredReports] = useState([]);
   const [allData, setAllData] = useState([]);
   useEffect(() => {
     const q = query(collection(db, "reports"));
@@ -38,16 +36,6 @@ export function MapsScreen(props) {
     });
   }, []);
 
-  const presFilter = () => {
-    console.log("LARGO DE FILTRO ANTES DE :", filteredReports.length);
-    const filterReport = allData.filter(
-      (item) => item.typeRep.trim() === "Accidente"
-    );
-    const filteredLocations = filterReport.map((report) => report.location);
-    setLocations(filteredLocations);
-    setFilteredReports(filterReport);
-    console.log("LARGO DE FILTRO despues DE :", locations);
-  };
   const goToReport = (reportIndex) => {
     const selectedReportId = ids[reportIndex];
 
@@ -69,33 +57,15 @@ export function MapsScreen(props) {
       provider="google"
       minZoomLevel={12.5}
     >
-      {filteredReports.length < 1
-        ? map(locations, (location, index) => (
-            <Marker
-              key={index}
-              coordinate={location}
-              onPress={() => goToReport(index)}
-            >
-              <CustomMarker type={typeRep[index]} />
-            </Marker>
-          ))
-        : map(locations, (location, index) => (
-            <Marker
-              key={index}
-              coordinate={location}
-              onPress={() => goToReport(index)}
-            >
-              <CustomMarker type={typeRep[index]} />
-            </Marker>
-          ))}
-
-      <Icon
-        type="material-community"
-        name="filter-variant"
-        iconStyle={styles.icon}
-        size={50}
-        onPress={presFilter}
-      />
+      {map(locations, (location, index) => (
+        <Marker
+          key={index}
+          coordinate={location}
+          onPress={() => goToReport(index)}
+        >
+          <CustomMarker type={typeRep[index]} />
+        </Marker>
+      ))}
     </MapView>
   );
 }

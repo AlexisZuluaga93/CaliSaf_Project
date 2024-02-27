@@ -3,13 +3,14 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     alignSelf: "center",
-    paddingHorizontal: 7,
-    paddingBottom: 20,
+    // paddingHorizontal: 7,
+    //paddingBottom: 20,
   },
   imageContent: {
     flex: 1,
-    backgroundColor: "white",
-    borderRadius: 18,
+    backgroundColor: "#FAFAF8",
+    borderTopLeftRadius: 18,
+    borderTopRightRadius: 18,
   },
 
   images: {

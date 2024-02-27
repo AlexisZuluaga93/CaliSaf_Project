@@ -19,6 +19,19 @@ export function AppNavigation() {
       })}
     >
       <Tab.Screen
+        name={screen.account.tab}
+        component={AccountStack}
+        options={{
+          title: "Cuenta",
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require("../../assets/img/account.png")}
+              style={{ height: size, width: size }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name={screen.reports.tab}
         component={ReportsStack}
         options={{
@@ -54,19 +67,7 @@ export function AppNavigation() {
           ),
         }}
       />  esto se implementara mas adelante*/}
-      <Tab.Screen
-        name={screen.account.tab}
-        component={AccountStack}
-        options={{
-          title: "Cuenta",
-          tabBarIcon: ({ color, size }) => (
-            <Image
-              source={require("../../assets/img/account.png")}
-              style={{ height: size, width: size }}
-            />
-          ),
-        }}
-      />
+
       {/*  <Tab.Screen
         name={screen.donation.tab}
         component={DonationStack}
